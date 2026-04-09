@@ -183,3 +183,10 @@
   }
 } */
 @import "tailwindcss";
+
+/* ใช้ @layer base เพื่อให้แน่ใจว่า Tailwind จะไม่เอาค่า Default มาทับ */
+@layer base {
+  body {
+    background-color: black;
+  }
+}
