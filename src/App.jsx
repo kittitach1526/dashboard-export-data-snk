@@ -1,48 +1,59 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Power from "./pages/Power";
 import Pressure from "./pages/Pressure";
-import Flow from "./pages/Flow";  
+import Flow from "./pages/Flow";
 import AircomRealtime from "./pages/Aircom-overview";
+import Login from "./pages/Login";
 
+// 🔹 สร้าง Component ย่อยมาคุม Layout
+function AppContent() {
+  const location = useLocation();
 
-function App() {
+  // กำหนดว่าหน้าไหนบ้างที่ "ไม่ต้องการ" ให้แสดง Sidebar และ Navbar
+  const noLayoutPaths = ["/login"]; // ปกติหน้า Login มักจะซ่อนทั้งคู่
+  const isLoginPage = noLayoutPaths.includes(location.pathname);
+
   return (
-    <Router>
-      {/* 1. ล็อกความสูงเท่าหน้าจอพอดี และห้ามเลื่อนทั้งหน้าจอ (overflow-hidden) */}
-      <div className="flex flex-col h-screen max-w-7xl mx-auto overflow-hidden">
-        
-        {/* Navbar: อยู่ด้านบนสุด ล็อกที่เดิมโดยธรรมชาติของ flex-col */}
-        <Navbar />
+    <div className="flex flex-col h-screen max-w-7xl mx-auto overflow-hidden">
+      {/* ซ่อน Navbar ในหน้า Login */}
+      {!isLoginPage && <Navbar />}
 
-        <div className="flex flex-1 overflow-hidden">
-          {/* Sidebar: ล็อกความกว้าง และใช้ h-full เพื่อให้สูงเต็มพื้นที่ที่เหลือ */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* ซ่อน Sidebar ในหน้า Login */}
+        {!isLoginPage && (
           <aside className="w-64 bg-gray-50 border-r border-gray-100 hidden md:block h-full">
             <Sidebar />
           </aside>
+        )}
 
-          {/* Main Content: 
-              - flex-1: กินพื้นที่ที่เหลือ
-              - overflow-y-auto: อนุญาตให้เลื่อนขึ้น-ลงได้เฉพาะส่วนนี้เท่านั้น
-              - bg-gray-100: ปรับสีพื้นหลังให้ดูสบายตาขึ้น 
-          */}
-          <main className="flex-1 overflow-y-auto bg-gray-100 p-6"> 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/power" element={<Power/>}/>
-              <Route path="/flow" element={<Flow/>}/>
-              <Route path="/pressure" element={<Pressure/>}/>
-              <Route path="/aircom-realtime" element={<AircomRealtime/>}/>
-            </Routes>
-          </main>
-        </div>
-
+        {/* ส่วนเนื้อหาหลัก */}
+        <main className={`flex-1 overflow-y-auto p-6 ${isLoginPage ? 'bg-white' : 'bg-gray-100'}`}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/power" element={<Power />} />
+            <Route path="/flow" element={<Flow />} />
+            <Route path="/pressure" element={<Pressure />} />
+            <Route path="/aircom-realtime" element={<AircomRealtime />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </main>
       </div>
+    </div>
+  );
+}
+
+// 🔹 ไฟล์หลักทำหน้าที่แค่หุ้ม Router
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
+
 export default App;
