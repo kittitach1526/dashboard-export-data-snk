@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { authService } from "../services/auth_api";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -7,20 +8,20 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // จำลองการ Login (เปลี่ยนเป็น API จริงของคุณได้ที่นี่)
-    setTimeout(() => {
-      if (username === "admin" && password === "1234") {
-        localStorage.setItem("isAuthenticated", "true");
-        navigate("/"); // หรือ path ของหน้าหลักคุณ
-      } else {
-        alert("Invalid Username or Password");
+    try {
+      const response = await authService.login(username, password);
+      if (response.status === "success") {
+        navigate("/"); // Login สำเร็จ ไปหน้าแรก
       }
+    } catch (error) {
+      alert(error.message); // แสดง Error จาก Service
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
