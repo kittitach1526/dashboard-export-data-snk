@@ -20,7 +20,7 @@ export default function Sidebar() {
     <div className="w-64 h-full bg-white border-r border-gray-100 flex flex-col py-6">
       <div className="px-6 mb-8">
         <h2 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-          Main Monitoring
+          Data Monitoring
         </h2>
       </div>
 

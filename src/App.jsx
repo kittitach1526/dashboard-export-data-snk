@@ -7,7 +7,7 @@ import Sidebar from "./components/Sidebar";
 import Power from "./pages/Power";
 import Pressure from "./pages/Pressure";
 import Flow from "./pages/Flow";  
-
+import AircomRealtime from "./pages/Aircom-overview";
 
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
               <Route path="/power" element={<Power/>}/>
               <Route path="/flow" element={<Flow/>}/>
               <Route path="/pressure" element={<Pressure/>}/>
+              <Route path="/aircom-realtime" element={<AircomRealtime/>}/>
             </Routes>
           </main>
         </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "http://localhost:8562";
 
 // สร้าง instance ของ axios เพื่อตั้งค่าเริ่มต้น
 const apiClient = axios.create({

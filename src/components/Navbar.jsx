@@ -37,15 +37,15 @@ export default function Navbar() {
         </div>
 
         {/* เส้นคั่นเล็กๆ */}
-        <div className="self-center w-[1px] h-4 bg-gray-200"></div>
+        {/* <div className="self-center w-[1px] h-4 bg-gray-200"></div> */}
 
         {/* SSI Data Button */}
-        <div className="flex flex-col items-end px-4 py-1.5 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors group">
+        {/* <div className="flex flex-col items-end px-4 py-1.5 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors group">
           <span className="text-[10px] font-black text-gray-400 group-hover:text-blue-600 transition-colors">
             SSI SYSTEM
           </span>
           <span className="text-sm font-bold text-gray-700">SSI Data</span>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

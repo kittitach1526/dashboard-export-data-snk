@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "http://localhost:8562";
 
 // สร้าง instance ของ axios เพื่อตั้งค่าเริ่มต้น
 const apiClient = axios.create({
@@ -16,6 +16,7 @@ export const powerService = {
   getPowerToday_5_5: async () => {
     try {
       const response = await apiClient.get("/api/power/power-5-5-today");
+      console.log(response.data)
       return response.data; // ส่ง data กลับไปให้ Component
     } catch (error) {
       console.error("API Error (getAircomToday):", error);
