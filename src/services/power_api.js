@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8562";
-
+// const API_BASE_URL = "http://localhost:8562";
+const API_BASE_URL ="https://api-py-fastapi.sphx-dev.online/"
 // สร้าง instance ของ axios เพื่อตั้งค่าเริ่มต้น
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

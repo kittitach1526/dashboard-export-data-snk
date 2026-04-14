@@ -339,7 +339,7 @@ function Home() {
                                 : "bg-gray-50 text-gray-400 border-gray-200"
                             }`}
                           >
-                            {row[col] || "-"}
+                            {row[col] || "0"}
                           </span>
                         ) : (
                           (row[col] ?? <span className="text-gray-200">-</span>)
