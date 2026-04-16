@@ -8,12 +8,12 @@ export const useAircomSocket_ac101 = (line) => {
 
   useEffect(() => {
     // กำหนด Path ตาม Line ที่ส่งมา (เช่น ac101, ac102)
-    const socketPath = `ws://192.168.100.206:1880/aircom/${line}`;
+    const socketPath = `ws://node-red-200.sphx-dev.online/real-time/all`;
     socketRef.current = new WebSocket(socketPath);
 
     socketRef.current.onopen = () => {
       setConnected(true);
-      console.log(`Connected to ${line}`);
+      console.log(`Connected to /real-time/power-f1-55`);
     };
 
     socketRef.current.onmessage = (event) => {
@@ -21,15 +21,16 @@ export const useAircomSocket_ac101 = (line) => {
         const msg = JSON.parse(event.data);
         
         // อัปเดตข้อมูลล่าสุด
+        console.log(msg)
         setCurrentData(msg);
         
         // อัปเดตประวัติกราฟ
         setHistory((prev) => {
           const newPoint = {
             time: new Date().toLocaleTimeString('th-TH', { hour12: false }),
-            pres: msg.presAC1,
-            temp: msg.tempAC1,
-            power: msg.powerAC1,
+            power_55_f1: msg.power_55_f1,
+            flow_55_f1: msg.flow_55_f1,
+            press_55_f1: msg.press_55_f1,
             volt: msg.voltageAC1,
             curr: msg.currentAC1,
             freq: msg.freqAC1
