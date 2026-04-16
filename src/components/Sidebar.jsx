@@ -11,7 +11,7 @@ import {
 export default function Sidebar() {
   // 2. เพิ่ม property 'path' เข้าไปใน array ของเมนู
   const menuItems = [
-    { name: "Aircom", path: "/aircom-realtime", icon: <Airplay size={20} />, color: "hover:bg-blue-50 hover:text-blue-600" },
+    { name: "Realtime", path: "/aircom-realtime", icon: <Airplay size={20} />, color: "hover:bg-blue-50 hover:text-blue-600" },
     { name: "Aircom", path: "/", icon: <Wind size={20} />, color: "hover:bg-blue-50 hover:text-blue-600" },
     { name: "Power", path: "/power", icon: <Zap size={20} />, color: "hover:bg-orange-50 hover:text-orange-600" },
     { name: "Flow", path: "/flow", icon: <Activity size={20} />, color: "hover:bg-green-50 hover:text-green-600" },
