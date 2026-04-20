@@ -21,7 +21,7 @@ export default function Navbar() {
             DATA MONITORING
           </h1>
           <p className="text-[10px] text-gray-400 uppercase tracking-widest">
-            Srivaree Center
+            Best Energy
           </p>
         </div>
       </div>
