@@ -5,7 +5,8 @@ import {
   Activity, 
   Gauge, 
   ChevronRight,
-  Airplay
+  Airplay,
+  Database
 } from 'lucide-react';
 
 export default function Sidebar() {
@@ -16,6 +17,7 @@ export default function Sidebar() {
     { name: "Power", path: "/power", icon: <Zap size={20} />, color: "hover:bg-orange-50 hover:text-orange-600" },
     { name: "Flow", path: "/flow", icon: <Activity size={20} />, color: "hover:bg-green-50 hover:text-green-600" },
     { name: "Pressure", path: "/pressure", icon: <Gauge size={20} />, color: "hover:bg-purple-50 hover:text-purple-600" },
+    { name: "Export", path: "/export", icon: <Database size={20}/>, color: "hover:bg-purple-50 hover:text-purple-600" },
   ];
 
   return (

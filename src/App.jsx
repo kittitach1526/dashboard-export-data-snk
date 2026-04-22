@@ -9,6 +9,7 @@ import Pressure from "./pages/Pressure";
 import Flow from "./pages/Flow";
 import AircomRealtime from "./pages/Aircom-overview";
 import Login from "./pages/Login";
+import ExportPage from "./pages/export_data";
 
 // 🔹 สร้าง Component ย่อยมาคุม Layout
 function AppContent() {
@@ -40,6 +41,8 @@ function AppContent() {
             <Route path="/pressure" element={<Pressure />} />
             <Route path="/aircom-realtime" element={<AircomRealtime />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/export" element={<ExportPage />} />
+
           </Routes>
         </main>
       </div>

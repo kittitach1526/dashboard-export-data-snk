@@ -76,7 +76,7 @@ function AircomDashboard() {
         <Gauge value={currentData_ac101?.power_55_f1?.toFixed(2)} max={100} label={`POWER`} unit="kW" color="text-blue-500" />
         <Gauge value={currentData_ac101?.flow_55_f1?.toFixed(2)} max={100} label={`FLOW`} unit="m³/min" color="text-orange-500" />
         <Gauge value={currentData_ac101?.press_55_f1?.toFixed(2)} max={100} label={`Pressure`} unit="Bar" color="text-emerald-500" />
-        <Gauge value={currentData_ac101?.cal_55_f1?.toFixed(2)} max={100} label={`kw/min`} unit="kW/min" color="text-purple-500" />
+        <Gauge value={currentData_ac101?.cal_55_f1?.toFixed(3)} max={100} label={`kW/m³/min`} unit="kW/m³/min" color="text-purple-500" />
       </div>
 
       {/*-----------------------------------------------------------------------------------------------------------------*/}
@@ -98,7 +98,7 @@ function AircomDashboard() {
         <Gauge value={currentData_ac101?.power_65_f1?.toFixed(2)} max={100} label={`POWER`} unit="kW" color="text-blue-500" />
         <Gauge value={currentData_ac101?.flow_65_f1?.toFixed(2)} max={100} label={`FLOW`} unit="m³/min" color="text-orange-500" />
         <Gauge value={currentData_ac101?.press_65_f1?.toFixed(2)} max={100} label={`Pressure`} unit="Bar" color="text-emerald-500" />
-        <Gauge value={currentData_ac101?.cal_65_f1?.toFixed(2)} max={100} label={`kw/min`} unit="kW/min" color="text-purple-500" />
+        <Gauge value={currentData_ac101?.cal_65_f1?.toFixed(3)} max={100} label={`kW/m³/min`} unit="kW/m³/min" color="text-purple-500" />
       </div>
 
       {/* Gauges Section */}
@@ -125,7 +125,7 @@ function AircomDashboard() {
         <Gauge value={currentData_ac101?.power_7_f2?.toFixed(2)} max={100} label={`POWER`} unit="kW" color="text-blue-500" />
         <Gauge value={currentData_ac101?.flow_7_f2?.toFixed(2)} max={100} label={`FLOW`} unit="m³/min" color="text-orange-500" />
         <Gauge value={currentData_ac101?.press_7_f2?.toFixed(2)} max={100} label={`Pressure`} unit="Bar" color="text-emerald-500" />
-        <Gauge value={currentData_ac101?.cal_7_f2?.toFixed(2)} max={100} label={`kw/min`} unit="kW/min" color="text-purple-500" />
+        <Gauge value={currentData_ac101?.cal_7_f2?.toFixed(3)} max={100} label={`kW/m³/min`} unit="kW/m³/min" color="text-purple-500" />
       </div>
     
     </div>
